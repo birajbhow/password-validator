@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div>
+    <h1>Password Validator</h1>
+    <form method="post">
+        <div>
+            <input type="text" name="password" value="@ViewBag.Password"/>
+            <input type="submit" />
+        </div>
+    </form>
+    
+    @if (!string.IsNullOrWhiteSpace(@ViewBag.Password))
+    {
+        if (ViewBag.IsValid)
+        {
+            <div style="margin-top: 10px; color: green">Valid Password!</div>
+        }
+        else
+        {   
+            <div style="margin-top: 10px; color: red">Invalid Password!</div>
+        }
+    }
+    
+</div>
